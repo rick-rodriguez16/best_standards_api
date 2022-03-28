@@ -31,7 +31,7 @@ const createBenchmark = (req, res) => {
             pool.query(queries.createBenchmark, [full_benchmark, benchmark_def, example1, example2, example3, clarification1, clarification2, clarification3, clarification4, purpose, misconception1, misconception2, misconception3, misconception4, misconception5, terms, full_standard, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5, benchmark_no], (error, results) => {
                 if (error) throw error;
                 res.status(201).send("Benchmark successfully created.");
-            "added create benchmark"});
+            });
         }
     });
 };
