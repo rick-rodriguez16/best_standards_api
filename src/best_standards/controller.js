@@ -34,6 +34,24 @@ const getStandardByFullStandard = (req, res) => {
     });
 };
 
+/*
+const updateStandard = (req, res) => {
+    const standard = req.params.full_standard;    
+    pool.query(queries.getStandardByFullStandard, [standard], (error, results) => {
+        
+        if (!results.rows.length) {                          // if the standard does not exist...
+            res.send("Sorry, standard does not exist.");
+            return;
+        }
+    
+        pool.query(queries.updateStandard, [standard], (err, results) => {
+            if (err) throw err;
+            res.status(200).send("Standard successfully updated.");
+        });
+    });
+};
+*/
+
 const deleteStandard = (req, res) => {
     const standard = req.params.full_standard;    
     pool.query(queries.getStandardByFullStandard, [standard], (error, results) => {
@@ -85,6 +103,24 @@ const getBenchmarkByFullBenchmark = (req, res) => {
     });
 };
 
+/*
+const updateBenchmark = (req, res) => {
+    const benchmark = req.params.full_benchmark;    
+    pool.query(queries.getBenchmarkByFullBenchmark, [benchmark], (error, results) => {
+        
+        if (!results.rows.length) {                          // if the benchmark does not exist...
+            res.send("Sorry, benchmark does not exist.");
+            return;
+        }
+    
+        pool.query(queries.updateBenchmark, [benchmark], (err, results) => {
+            if (err) throw err;
+            res.status(200).send("Benchmark successfully updated.");
+        });
+    });
+};
+*/
+
 const deleteBenchmark = (req, res) => {
     const benchmark = req.params.full_benchmark;    
     pool.query(queries.getBenchmarkByFullBenchmark, [benchmark], (error, results) => {
@@ -105,9 +141,11 @@ module.exports = {
     getAllStandards,
     getStandardByFullStandard,
     createStandard,
+    //updateStandard,
     deleteStandard,
     createBenchmark,
     getAllBenchmarks,
     getBenchmarkByFullBenchmark,
+    //updateBenchmark,
     deleteBenchmark,
 }
