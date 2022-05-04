@@ -13,6 +13,12 @@ const getBenchmarkByFullBenchmark = "SELECT * FROM benchmark WHERE full_benchmar
 //const updateBenchmark = 
 const deleteBenchmark = "DELETE FROM benchmark WHERE full_benchmark = $1";
 
+// queries for the horizontal_alignment TABLE
+const createHorizontalAlignment = "INSERT INTO horizontal_alignment(full_benchmark, related_benchmark1, related_benchmark2, related_benchmark3, related_benchmark4, related_benchmark5, related_benchmark6, related_benchmark7, related_benchmark8, related_benchmark9, related_benchmark10, related_benchmark11, related_benchmark12) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)";
+const getAllHorizontalAlignments = "SELECT * FROM horizontal_alignment";
+const getHorizontalAlignmentFromBenchmark = "SELECT * FROM horizontal_alignment WHERE full_benchmark = $1";
+
+
 module.exports = {
     createStandard,
     getAllStandards,
@@ -23,5 +29,8 @@ module.exports = {
     getAllBenchmarks,
     getBenchmarkByFullBenchmark,
     //updateBenchmark,
-    deleteBenchmark
+    deleteBenchmark,
+    createHorizontalAlignment,
+    getAllHorizontalAlignments,
+    getHorizontalAlignmentFromBenchmark
 }

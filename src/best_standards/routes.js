@@ -17,4 +17,9 @@ router.get('/benchmarks/:full_benchmark', controller.getBenchmarkByFullBenchmark
 router.delete('/benchmarks/:full_benchmark', controller.deleteBenchmark);
 
 
+router.post('/horizontal_alignment', controller.createHorizontalAlignment);
+router.get('/horizontal_alignment', controller.getAllHorizontalAlignments);
+router.get('/horizontal_alignment/:full_benchmark', controller.getHorizontalAlignmentFromBenchmark);
+
+
 module.exports = router;
