@@ -1,7 +1,7 @@
 const express = require('express');
 const studentRoutes = require('./src/best_standards/routes');
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.json());
 
@@ -11,7 +11,4 @@ app.get('/', (req, res) => {
 
 app.use('/api/best_standards', studentRoutes);
 
-
-
 app.listen(port, () => console.log(`app listening on port ${port}`));
-
