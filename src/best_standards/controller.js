@@ -164,7 +164,7 @@ const getAllHorizontalAlignments = (req, res) => {
 };
 
 const getHorizontalAlignmentFromBenchmark = (req, res) => {
-    const horizontalAlignment = req.param.full_benchmark;
+    const horizontalAlignment = req.params.full_benchmark;
     pool.query(queries.getHorizontalAlignmentFromBenchmark, [horizontalAlignment], (err, results) => {
         if (err) throw err;
         res.status(200).json(results.rows)
