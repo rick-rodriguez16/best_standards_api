@@ -1,14 +1,14 @@
 const express = require('express');
-const studentRoutes = require('./src/best_standards/routes');
+const bestStandardRoutes = require('./src/best_standards/routes');
 const app = express();
 const port = 5000;
 
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send("Hello, World!");
+    res.send("Welcome to the B.E.S.T. Standards backend");
 });
 
-app.use('/api/best_standards', studentRoutes);
+app.use('/api/best_standards', bestStandardRoutes);
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
