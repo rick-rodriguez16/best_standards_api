@@ -1,15 +1,15 @@
 const { Router } = require('express');
 const router = Router();
 
-const standardsController = require('./controller-standards');
+const standardController = require('./controller-standards');
 const benchmarkController = require('./controller-benchmarks');
 const horizontalAlignmentController = require('./controller-horizontal-alignment');
 
-router.post('/standards', standardsController.createStandard);
-router.get('/standards', standardsController.getAllStandards);
-router.get('/standards/:full_standard', standardsController.getStandardByFullStandard);
+router.post('/standards', standardController.createStandard);
+router.get('/standards', standardController.getAllStandards);
+router.get('/standards/:full_standard', standardController.getStandardByFullStandard);
 //router.put('/standards/:full_standard', standardsController.updateStandard);
-router.delete('/standards/:full_standard', standardsController.deleteStandard);
+router.delete('/standards/:full_standard', standardController.deleteStandard);
 
 
 router.post('/benchmarks', benchmarkController.createBenchmark);
