@@ -3,7 +3,7 @@ const queries = require("./queries.js");
 
 
 const createHorizontalAlignment = (req, res) => {
-    const {full_benchmark, related_benchmark1, related_benchmark2, related_benchmark3, related_benchmark4, related_benchmark5, related_benchmark6, related_benchmark7, related_benchmark8, related_benchmark9, related_benchmark10, related_benchmark11, related_benchmark12} = req.body;
+    const {full_benchmark, related_benchmarks} = req.body;
 
     // check if horizontal alignment already exists
     pool.query(queries.getHorizontalAlignmentFromBenchmark, [full_benchmark], (error, results) => {
@@ -12,7 +12,7 @@ const createHorizontalAlignment = (req, res) => {
             return;
         }
 
-        pool.query(queries.createHorizontalAlignment, [full_benchmark, related_benchmark1, related_benchmark2, related_benchmark3, related_benchmark4, related_benchmark5, related_benchmark6, related_benchmark7, related_benchmark8, related_benchmark9, related_benchmark10, related_benchmark11, related_benchmark12], (error, results) => {
+        pool.query(queries.createHorizontalAlignment, [full_benchmark, related_benchmarks], (error, results) => {
             if (error) throw error;
             res.status(201).send("Horizontal alignment successfully created for this benchmark.");
         });
