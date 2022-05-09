@@ -7,11 +7,11 @@ const getStandardByFullStandard = "SELECT * FROM standard WHERE full_standard = 
 const deleteStandard = "DELETE FROM standard WHERE full_standard = $1";
 
 // queries for the benchmark TABLE
-const createBenchmark = "INSERT INTO benchmark (full_benchmark, benchmark_def, example1, example2, example3, clarification1, clarification2, clarification3, clarification4, purpose, misconception1, misconception2, misconception3, misconception4, misconception5, terms, full_standard, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5, benchmark_no) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23)";
-const getAllBenchmarks = "SELECT * FROM benchmark";
-const getBenchmarkByFullBenchmark = "SELECT * FROM benchmark WHERE full_benchmark = $1";
+const createBenchmark_Kthru2 = "INSERT INTO benchmarks_kthru2 (full_benchmark, benchmark_def, example1, example2, example3, clarification1, clarification2, clarification3, clarification4, purpose, misconception1, misconception2, misconception3, misconception4, misconception5, terms, full_standard, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5, benchmark_no) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23)";
+const getAllBenchmarks_Kthru2 = "SELECT * FROM benchmarks_kthru2";
+const getBenchmarkByFullBenchmark_Kthru2 = "SELECT * FROM benchmarks_kthru2 WHERE full_benchmark = $1";
 //const updateBenchmark = 
-const deleteBenchmark = "DELETE FROM benchmark WHERE full_benchmark = $1";
+const deleteBenchmark_Kthru2 = "DELETE FROM benchmarks_kthru2 WHERE full_benchmark = $1";
 
 // queries for the horizontal_alignment TABLE
 const createHorizontalAlignment = "INSERT INTO horizontal_alignment(full_benchmark, related_benchmarks) VALUES ($1, $2)";
@@ -25,11 +25,11 @@ module.exports = {
     getStandardByFullStandard,
     //updateStandard,
     deleteStandard,
-    createBenchmark,
-    getAllBenchmarks,
-    getBenchmarkByFullBenchmark,
+    createBenchmark_Kthru2,
+    getAllBenchmarks_Kthru2,
+    getBenchmarkByFullBenchmark_Kthru2,
     //updateBenchmark,
-    deleteBenchmark,
+    deleteBenchmark_Kthru2,
     createHorizontalAlignment,
     getAllHorizontalAlignments,
     getHorizontalAlignmentFromBenchmark

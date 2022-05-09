@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 
 const standardController = require('./controller-standards');
-const benchmarkController = require('./controller-benchmarks');
+const benchmarkController = require('./controller-benchmarks-kthru2');
 const horizontalAlignmentController = require('./controller-horizontal-alignment');
 
 router.post('/standards', standardController.createStandard);
