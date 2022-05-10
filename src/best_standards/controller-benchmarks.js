@@ -9,13 +9,13 @@ const createBenchmark = (req, res) => {
     pool.query(queries.getBenchmarkByFullBenchmark, [full_benchmark], (error, results) => {
         
         if (results.rows.length) {                          // if array length returned > 0, benchmark exists and cannot be added
-            res.send("Sorry, benchmark 3-12 already exists.");
+            res.send("Sorry, benchmark already exists.");
             return;
         }
 
         pool.query(queries.createBenchmark, [full_benchmark, emphases, benchmark_def, examples, clarifications, terms, purpose, misconceptions, full_standard], (error, results) => {
             if (error) throw error;
-            res.status(201).send("Benchmark 3-12 successfully created.");
+            res.status(201).send("Benchmark successfully created.");
         });
     });
 };
@@ -58,13 +58,13 @@ const deleteBenchmark = (req, res) => {
     pool.query(queries.getBenchmarkByFullBenchmark, [benchmark], (error, results) => {
         
         if (!results.rows.length) {                          // if the benchmark does not exist...
-            res.send("Sorry, benchmark 3-12 does not exist.");
+            res.send("Sorry, benchmark does not exist.");
             return;
         }
     
         pool.query(queries.deleteBenchmark, [benchmark], (err, results) => {
             if (err) throw err;
-            res.status(200).send("Benchmark 3-12 successfully deleted.");
+            res.status(200).send("Benchmark successfully deleted.");
         });
     });
 };
