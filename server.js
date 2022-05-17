@@ -1,5 +1,5 @@
 const express = require('express');
-const bestStandardsRoutes = require('./src/best_standards/routes');
+const bestStandardRoutes = require('./src/best_standards/routes');
 const app = express();
 const port = 5000;
 
@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
     res.send("Welcome to the B.E.S.T. Standards backend");
 });
 
-app.use('/api/best_standards', bestStandardsRoutes);
+app.use('/api/best_standards', bestStandardRoutes);
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
